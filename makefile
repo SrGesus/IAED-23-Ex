@@ -5,11 +5,11 @@ all: $(wildcard */*.c)
 	@echo Choose one of the following:
 	@for f in $^; do echo $${f::-2}; done
 
-%: %.c clean
+%: %.c
 	$(CC) $(CFLAGS) $< -o $@
 	@echo 
 	@echo $@ Output:
 	@$@
-
-clean: 
+	@echo
+	@echo "Cleaning Binaries..."
 	rm -rf */ex*[^c]

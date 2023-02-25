@@ -12,4 +12,7 @@ all: $(wildcard */*.c)
 	@$@
 	@echo
 	@echo "Cleaning Binaries..."
+	rm $@
+
+clean: 
 	rm -rf */ex*[^c]

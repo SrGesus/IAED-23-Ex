@@ -1,1 +1,12 @@
-/* iaed-23 - ist1107030 - lab02/ex03 */
+#include <stdio.h>
+
+int main() {
+    int valor1, valor2;
+    scanf("%d%d", &valor1, &valor2);
+    if (valor1 % valor2) {
+        printf("no\n");
+    } else {
+        printf("yes\n");
+    }
+    return 0;
+}

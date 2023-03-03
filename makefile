@@ -1,5 +1,8 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -ansi -pedantic
+CFLAGS = -Wall -Wextra -ansi -pedantic
+
+INPUT_FILE ?= $(shell bash -c 'read -p "Enter the input file path (empty if None): " input; if [ "$$input" = "" ]; then echo NULL; else echo $$input; fi')
+INPUT := $(INPUT_FILE)
 
 all: $(wildcard */*.c)
 	@echo Choose one of the following:
@@ -7,9 +10,9 @@ all: $(wildcard */*.c)
 
 %: %.c
 	$(CC) $(CFLAGS) $< -o $@
-	@echo 
+	@echo
 	@echo $@ Output:
-	@$@
+	if [ "$(INPUT)" = "NULL" ]; then $@; else $@ < $(INPUT); fi
 	@echo
 	@echo "Cleaning Binaries..."
 	rm $@

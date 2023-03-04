@@ -4,12 +4,6 @@ int conc_num(int left, int right) {
     return 10*left + right;
 }
 
-/*
-void handle_char(int c, int *n1, int *n2) {
-
-}
-*/
-
 enum op{SUM,SUBTRACT};
 
 int calc_op(enum op operador, int a, int b) {
